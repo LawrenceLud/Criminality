@@ -1,4 +1,3 @@
-
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/Vape.txt"))()
 
 local win = lib:Window("Criminality | Templo Hub", Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
@@ -8,7 +7,7 @@ local mainTab = win:Tab("Main Tab")
 getgenv().Aimbot = nil
 getgenv().ESP = nil
 
--- Toggle para Aimbot
+-- Toggle para o Aimbot
 mainTab:Toggle("Aimbot", false, function(t)
     getgenv().Aimbot = t
 
@@ -111,6 +110,7 @@ mainTab:Toggle("Aimbot", false, function(t)
     UserInputService.InputBegan:Connect(function(input)
         if input.UserInputType == aimKey then
             if aimbotEnabled then
+                aimbotEnabled = true
                 aimAtTarget()
             end
         end
@@ -121,9 +121,18 @@ mainTab:Toggle("Aimbot", false, function(t)
             aimbotEnabled = false
         end
     end)
+
+    -- Loop para desativar aimbot quando o toggle for desmarcado
+    while getgenv().Aimbot do
+        task.wait(.1)
+        aimbotEnabled = getgenv().Aimbot
+        if aimbotEnabled then
+            aimAtTarget()
+        end
+    end
 end)
 
--- Toggle para ESP
+-- Toggle para o ESP
 mainTab:Toggle("ESP", false, function(t)
     getgenv().ESP = t
 
@@ -165,7 +174,7 @@ mainTab:Toggle("ESP", false, function(t)
                     local rootPartPos = Camera:WorldToViewportPoint(character.HumanoidRootPart.Position)
                     tracer.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y) -- Base da tela
                     tracer.To = Vector2.new(rootPartPos.X, rootPartPos.Y)
-                    tracer.Visible = true
+                    tracer.Visible = getgenv().ESP
                 else
                     tracer.Visible = false
                 end
@@ -191,6 +200,7 @@ mainTab:Toggle("ESP", false, function(t)
     end)
 end)
 
+-- Rejoin Button
 mainTab:Button("Rejoin", function()
     game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 end)
