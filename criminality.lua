@@ -8,12 +8,19 @@ local ESPObjects = {} -- Tabela para armazenar ESPs criados
 
 -- Criar Interface Gráfica
 local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
-local ToggleButton = Instance.new("TextButton", ScreenGui)
-local AimbotButton = Instance.new("TextButton", ScreenGui)
+local ButtonFrame = Instance.new("Frame", ScreenGui)
+
+ButtonFrame.Size = UDim2.new(0, 200, 0, 100) -- Ajuste o tamanho do painel onde os botões ficam
+ButtonFrame.Position = UDim2.new(0.5, -100, 0.8, 0) -- Centralizado na tela
+ButtonFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ButtonFrame.BackgroundTransparency = 0.5
+
+local ToggleButton = Instance.new("TextButton", ButtonFrame)
+local AimbotButton = Instance.new("TextButton", ButtonFrame)
 
 -- Configuração do Botão para ESP
-ToggleButton.Size = UDim2.new(0, 200, 0, 50)
-ToggleButton.Position = UDim2.new(0.5, -100, 0.9, 0)
+ToggleButton.Size = UDim2.new(1, 0, 0, 50) -- Botão ocupa 100% da largura
+ToggleButton.Position = UDim2.new(0, 0, 0, 0) -- Fica no topo do painel
 ToggleButton.Text = "Ativar ESP"
 ToggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -21,8 +28,8 @@ ToggleButton.Font = Enum.Font.SourceSansBold
 ToggleButton.TextSize = 20
 
 -- Configuração do Botão para Aimbot
-AimbotButton.Size = UDim2.new(0, 200, 0, 50)
-AimbotButton.Position = UDim2.new(0.5, -100, 0.8, 0)
+AimbotButton.Size = UDim2.new(1, 0, 0, 50) -- Botão ocupa 100% da largura
+AimbotButton.Position = UDim2.new(0, 0, 0, 50) -- Fica logo abaixo do botão ESP
 AimbotButton.Text = "Ativar Aimbot"
 AimbotButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 AimbotButton.TextColor3 = Color3.fromRGB(255, 255, 255)
