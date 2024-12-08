@@ -20,7 +20,7 @@ local AimbotButton = Instance.new("TextButton", ButtonFrame)
 
 -- Configuração do Botão para ESP
 ToggleButton.Size = UDim2.new(1, 0, 0, 50) -- Botão ocupa 100% da largura
-ToggleButton.Position = UDim2.new(0, 0, 0, 0) -- Fica no topo do painel
+ToggleButton.Position = UDim2.new(0, 50, 50, 0) -- Fica no topo do painel
 ToggleButton.Text = "Ativar ESP"
 ToggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
