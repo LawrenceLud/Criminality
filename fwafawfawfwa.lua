@@ -10,7 +10,7 @@
 
 -- Configurações
 local CONFIG = {
-    API_URL = "https://05c1b4fb-7f39-4085-a63a-f0f3400d7228-00-3s7ms793a41e9.kirk.replit.dev", -- Substitua com a URL real onde o código está hospedado
+    API_URL = "https://3e85de6f-a7f1-4473-a8b9-56383a9de229-00-1nh4mmjwdhlwq.janeway.replit.dev", -- Substitua com a URL real onde o código está hospedado
     HUB_NAME = "Templo Hub",
     VERSION = "3.0.0",
     TEMPLO_HUB_URL = "https://raw.githubusercontent.com/LawrenceLud/ProjectBaki3/refs/heads/main/TemploHub.lua"
