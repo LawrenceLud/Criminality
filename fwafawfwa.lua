@@ -10,7 +10,7 @@
 
 -- Configurações
 local CONFIG = {
-    API_URL = "https://workspace.fetex16218.repl.co", -- URL real do servidor
+    API_URL = "https://05c1b4fb-7f39-4085-a63a-f0f3400d7228-00-3s7ms793a41e9.kirk.replit.dev/api/roblox/authorize", -- URL real do servidor
     HUB_NAME = "Templo Hub",
     VERSION = "3.0.0",
     TEMPLO_HUB_URL = "https://raw.githubusercontent.com/LawrenceLud/ProjectBaki3/refs/heads/main/TemploHub.lua"
